@@ -269,61 +269,38 @@ label {
     background-color: #2c2c2c;
 }
 
-.modal {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 100%;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0,0,0,.2);
-    opacity: 0;
-    transition: opacity .3s;
+/* Modal Header */
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
 
-.modal__check {display: none;}
+/* Modal Body */
+.modal-body {padding: 2px 16px;}
 
-.modal__info {
-    position: relative;
-    width: 90%;
-    max-width: 400px;
-    max-height: 90%;
-    padding: 20px 20px 5px;
-    background-color: #fff;
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+/* Modal Footer */
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
 }
 
-.modal__close {
-    font-family: serif;
-    position: absolute;
-    z-index: 2;
-    top: 5px;
-    right: 5px;
-    width: 25px;
-    border-radius: 50%;
-    font-size: 36px;
-    line-height: 25px;
-    text-align: center;
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
 }
 
-.modal__closetwo {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
 }
-
-.modal__check:checked+.modal {
-    opacity: 1;
-    right: 0;
-}
-
-.button:hover,.modal__close:hover {opacity: 0.7;}
-.modal__info::-webkit-scrollbar {display: none;}
